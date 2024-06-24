@@ -3,16 +3,16 @@
     <id>https://blog.tianjiaji.dedyn.io</id>
     <title>没用的博客 • Posts by &#34;教程&#34; tag</title>
     <link href="https://blog.tianjiaji.dedyn.io" />
-    <updated>2024-04-14T14:38:28.000Z</updated>
+    <updated>2024-06-24T19:50:51.000Z</updated>
     <category term="博客" />
     <category term="职业技能大赛" />
-    <category term="教程" />
     <category term="题目" />
     <category term="工具" />
     <category term="开源" />
+    <category term="生成器" />
+    <category term="教程" />
     <category term="统计" />
     <category term="github" />
-    <category term="生成器" />
     <category term="Hexo" />
     <category term="主題" />
     <category term="butterfly" />
@@ -26,6 +26,33 @@
     <category term="面试题目" />
     <category term="单招面试" />
     <category term="标籤外挂" />
+    <entry>
+        <id>https://blog.tianjiaji.dedyn.io/2024/06/25/image/undefined/undefined.html</id>
+        <title>Docker hub镜像加速 教程</title>
+        <link rel="alternate" href="https://blog.tianjiaji.dedyn.io/2024/06/25/image/undefined/undefined.html"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;DockerHub-国内使用方法&#34;&gt;&lt;a href=&#34;#DockerHub-国内使用方法&#34; class=&#34;headerlink&#34; title=&#34;DockerHub 国内使用方法&#34;&gt;&lt;/a&gt;DockerHub 国内使用方法&lt;/h1&gt;&lt;p&gt;Docker Hub 是 Docker 提供的一项服务，是世界上最大的容器映像存储库，其中包含一系列内容源，包括容器社区开发人员\开源项目和独立软件供应商（ISV），都会在容器中构建和分发其代码。2024年6月起，国内所有公开的 dockerhub 加速源陆续下架（实际是转为校内或企业内专用），官方源全部 sni 阻断。本文简要说明国内使用 dockerhub 的方法，希望对确有 docker 服务需求的小伙伴能有所帮助。未来，如果 github、node、golang 等众多非开发人员也需要用到的工具&amp;#x2F;网站也出现类似情况时，照葫芦画瓢糊一个代理就是。搭建专属 docker 代理加速站点,项目地址&lt;a href=&#34;https://github.com/ciiiii/cloudflare-docker-proxy&#34;&gt;cloudflare-docker-proxy&lt;/a&gt;感兴趣的可以去看看,如果觉得有帮助可以给原作者点一个Star。&lt;/p&gt;
+&lt;h2 id=&#34;目前可用的个人公益dockerhub镜像源&#34;&gt;&lt;a href=&#34;#目前可用的个人公益dockerhub镜像源&#34; class=&#34;headerlink&#34; title=&#34;目前可用的个人公益dockerhub镜像源&#34;&gt;&lt;/a&gt;目前可用的个人公益dockerhub镜像源&lt;/h2&gt;&lt;p&gt;以下无限制要求（注册、验证等）的 dockerhub 镜像源，均为个人搭建提供的国内可使用加速镜像，感谢的同时需要提醒，随时有可能关闭或失效&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Docker镜像加速&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://hub.uuuadc.top/docker.1panel.live&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.1panel.live&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://hub.rat.dev&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;DockerHub 镜像加速代理&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.anyhub.us.kg&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.chenby.cn&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://dockerhub.jobcher.com&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;DockerhubICU&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://dockerhub.icu&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Docker镜像加速站&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.ckyl.me&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Docker镜像&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.awsl9527.cn&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.hpcloud.cloud&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Atomhub（只包含336个基础镜像）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://atomhub.openatom.cn&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Daocloud镜像&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.m.daocloud.io&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;本站自用镜像&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.additive.cloudns.org           # dockerhub&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.tianjiaji.cloudns.org          # dockerhub&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://quay.tianjiaji.cloudns.org            # quay&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://gcr.tianjiaji.cloudns.org             # gcr&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://k8s-gcr.tianjiaji.cloudns.org         # k8s-gcr       &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://k8s.tianjiaji.cloudns.org             # k8s&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://ghcr.tianjiaji.cloudns.org            # ghcr&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://cloudsmith.tianjiaji.cloudns.org      # cloudsmith&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Dockerhub 代理加速镜像，可以通过两种方法使用：&lt;/p&gt;
+&lt;h3 id=&#34;1-添加、设置-registry-mirror&#34;&gt;&lt;a href=&#34;#1-添加、设置-registry-mirror&#34; class=&#34;headerlink&#34; title=&#34;1.添加、设置 registry mirror&#34;&gt;&lt;/a&gt;1.添加、设置 registry mirror&lt;/h3&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tee /etc/docker/daemon.json &amp;lt;&amp;lt;EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;quot;registry-mirrors&amp;quot;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://hub.uuuadc.top&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.anyhub.us.kg&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://dockerhub.jobcher.com&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://dockerhub.icu&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.ckyl.me&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.awsl9527.cn&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.m.daocloud.io&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.laoex.link&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.additive.cloudns.org&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.tianjiaji.cloudns.org&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;重新加载系统服务配置&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;systemctl daemon-reload&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;重启Docker服务&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;systemctl restart docker&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;2-手动指定-Dockerhub-Proxy&#34;&gt;&lt;a href=&#34;#2-手动指定-Dockerhub-Proxy&#34; class=&#34;headerlink&#34; title=&#34;2.手动指定 Dockerhub Proxy&#34;&gt;&lt;/a&gt;2.手动指定 Dockerhub Proxy&lt;/h3&gt;&lt;p&gt;在拉取镜像时手动指定代理加速 url，将以下命令中示意的 proxy-url 替换为任意可用的加速 url 即可。&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker pull &amp;#123;proxy-url&amp;#125;/pytorch/pytorch&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+
+</content>
+        <category term="博客" />
+        <category term="教程" />
+        <updated>2024-06-24T19:50:51.000Z</updated>
+    </entry>
     <entry>
         <id>https://blog.tianjiaji.dedyn.io/2024/04/14/Apache/undefined/undefined.html</id>
         <title>Apache</title>
@@ -516,7 +543,7 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;curl linux4.skills.lan:8080&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;效果参考:&lt;br&gt;&lt;a href=&#34;https://imgse.com/i/pFXyRNn&#34;&gt;&lt;img src=&#34;https://s21.ax1x.com/2024/04/11/pFXyRNn.png&#34; alt=&#34;pFXyRNn.png&#34;&gt;&lt;/a&gt;&lt;br&gt;&lt;font color=&#34;red&#34;&gt;&lt;b&gt;提示：若无法连接请检查防火墙是否放行相应端口，以及测试时是否输入端口号！如:8080端口&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;更改端口&#34;&gt;&lt;a href=&#34;#更改端口&#34; class=&#34;headerlink&#34; title=&#34;更改端口&#34;&gt;&lt;/a&gt;更改端口&lt;/h4&gt;&lt;p&gt;因为该服务默认没有使用root用户所以在使用高位端口（0~1024）的时候没有权限，会导致服务没法正常启动。&lt;/p&gt;
+&lt;h4 id=&#34;更改端口&#34;&gt;&lt;a href=&#34;#更改端口&#34; class=&#34;headerlink&#34; title=&#34;更改端口&#34;&gt;&lt;/a&gt;更改端口&lt;/h4&gt;&lt;p&gt;因为该服务默认没有使用root用户所以在使用低位端口（0~1024）的时候没有权限，会导致服务没法正常启动。&lt;/p&gt;
 &lt;p&gt;&lt;font color=&#34;red&#34;&gt;&lt;b&gt;注意：两台 Tomcat 服务器都要改&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;改权限：&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim /usr/lib/systemd/system/tomcat.service&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -679,104 +706,6 @@
         <category term="职业技能大赛" />
         <category term="教程" />
         <updated>2024-03-02T16:29:24.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://blog.tianjiaji.dedyn.io/2024/01/21/2024-01-21-Competition-sample-questions-Shell/undefined/undefined.html</id>
-        <title>Shell 脚本 教程</title>
-        <link rel="alternate" href="https://blog.tianjiaji.dedyn.io/2024/01/21/2024-01-21-Competition-sample-questions-Shell/undefined/undefined.html"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;hr&gt;
-&lt;h2 id=&#34;Shell脚本&#34;&gt;&lt;a href=&#34;#Shell脚本&#34; class=&#34;headerlink&#34; title=&#34;Shell脚本&#34;&gt;&lt;/a&gt;Shell脚本&lt;/h2&gt;&lt;hr&gt;
-&lt;h2 id=&#34;题目&#34;&gt;&lt;a href=&#34;#题目&#34; class=&#34;headerlink&#34; title=&#34;题目&#34;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;任务描述：请采用 shell 脚本,实现快速批量的操作。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在 linux4 上编写&amp;#x2F;root&amp;#x2F;createfile.sh的shell脚本，创建20个文件&amp;#x2F;root&amp;#x2F;shell&amp;#x2F;file00至&amp;#x2F;root&amp;#x2F;shell&amp;#x2F;file19，如果文件存在，则删除再创建； 每个文件的内容同文件名， 如file00文件的内容为“file00”。&lt;/li&gt;
-&lt;li&gt;用&amp;#x2F;root&amp;#x2F;createfile.sh命令测试。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;教程&#34;&gt;&lt;a href=&#34;#教程&#34; class=&#34;headerlink&#34; title=&#34;教程&#34;&gt;&lt;/a&gt;教程&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&#34;第一小题&#34;&gt;&lt;a href=&#34;#第一小题&#34; class=&#34;headerlink&#34; title=&#34;第一小题&#34;&gt;&lt;/a&gt;第一小题&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;在 linux4 上编写&amp;#x2F;root&amp;#x2F;createfile.sh的shell脚本，创建20个文件&amp;#x2F;root&amp;#x2F;shell&amp;#x2F;file00至&amp;#x2F;root&amp;#x2F;shell&amp;#x2F;file19，如果文件存在，则删除再创建； 每个文件的内容同文件名， 如file00文件的内容为“file00”。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;1-创建createfile-sh脚本文件&#34;&gt;&lt;a href=&#34;#1-创建createfile-sh脚本文件&#34; class=&#34;headerlink&#34; title=&#34;1.创建createfile.sh脚本文件&#34;&gt;&lt;/a&gt;1.创建createfile.sh脚本文件&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim /root/createfile.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h4 id=&#34;2-写入脚本代码&#34;&gt;&lt;a href=&#34;#2-写入脚本代码&#34; class=&#34;headerlink&#34; title=&#34;2.写入脚本代码&#34;&gt;&lt;/a&gt;2.写入脚本代码&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;# &lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;创建目录&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;mkdir -p /root/shell&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;# &lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;创建文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;for i in $(seq -f &amp;quot;%02g&amp;quot; 0 19)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;do&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    file=&amp;quot;/root/shell/file$i&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    # 如果文件存在，则删除&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    if [ -e $file ]; then&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        rm $file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    fi&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    # 创建文件并设置内容&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    echo &amp;quot;file$i&amp;quot; &amp;gt; $file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;done&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;hr&gt;
-&lt;h3 id=&#34;第二小题&#34;&gt;&lt;a href=&#34;#第二小题&#34; class=&#34;headerlink&#34; title=&#34;第二小题&#34;&gt;&lt;/a&gt;第二小题&lt;/h3&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;用&amp;#x2F;root&amp;#x2F;createfile.sh命令测试。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;3-运行脚本&#34;&gt;&lt;a href=&#34;#3-运行脚本&#34; class=&#34;headerlink&#34; title=&#34;3.运行脚本&#34;&gt;&lt;/a&gt;3.运行脚本&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sh /root/createfile.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;font color=&#34;red&#34;&gt;&lt;b&gt;提示：如果运行失败，请检查该文件是否有可执行权限，如果没有权限就用命令添加可执行权限&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
-&lt;h4 id=&#34;4-修改权限&#34;&gt;&lt;a href=&#34;#4-修改权限&#34; class=&#34;headerlink&#34; title=&#34;4.修改权限&#34;&gt;&lt;/a&gt;4.修改权限&lt;/h4&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;chmod +x /root/createfile.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;+x &amp;#x3D; 给予该文件可执行权限&lt;/p&gt;
-&lt;p&gt;权限编号说明：&lt;/p&gt;
-&lt;p&gt;drwxr-xr-x  	root	root	&lt;a href=&#34;http://xxxxxxx.sh/&#34;&gt;XXXXXXX.sh&lt;/a&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;drwx&lt;/th&gt;
-&lt;th&gt;r-x&lt;/th&gt;
-&lt;th&gt;r-x&lt;/th&gt;
-&lt;th&gt;root&lt;/th&gt;
-&lt;th&gt;root&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;所属用户&lt;/td&gt;
-&lt;td&gt;所属组&lt;/td&gt;
-&lt;td&gt;其他用户和组&lt;/td&gt;
-&lt;td&gt;所属用户&lt;/td&gt;
-&lt;td&gt;所属组&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;d&lt;/td&gt;
-&lt;td&gt;表示这是目录&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;r&lt;/td&gt;
-&lt;td&gt;写&lt;/td&gt;
-&lt;td&gt;权限编号 4&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;w&lt;/td&gt;
-&lt;td&gt;读&lt;/td&gt;
-&lt;td&gt;权限编号 2&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;x&lt;/td&gt;
-&lt;td&gt;执行&lt;/td&gt;
-&lt;td&gt;权限编号 1&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-</content>
-        <category term="博客" />
-        <category term="职业技能大赛" />
-        <category term="教程" />
-        <updated>2024-01-21T12:00:00.000Z</updated>
     </entry>
     <entry>
         <id>https://blog.tianjiaji.dedyn.io/2020/12/31/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%A7%E8%BE%B9%E6%A0%8F/undefined/ea33ab97.html</id>
@@ -1217,7 +1146,7 @@
 &lt;p&gt;&lt;img src=&#34;https://jsd.012700.xyz/gh/jerryc127/CDN/img/73515338-e6874d80-442f-11ea-9d07-725d37002985.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;cheerio版本錯誤，請安裝0.22.0版本&lt;/p&gt;
-&lt;p&gt;npm install &lt;a href=&#34;mailto:&amp;#x63;&amp;#x68;&amp;#101;&amp;#101;&amp;#114;&amp;#105;&amp;#111;&amp;#64;&amp;#x30;&amp;#46;&amp;#x32;&amp;#x32;&amp;#46;&amp;#x30;&#34;&gt;&amp;#x63;&amp;#x68;&amp;#101;&amp;#101;&amp;#114;&amp;#105;&amp;#111;&amp;#64;&amp;#x30;&amp;#46;&amp;#x32;&amp;#x32;&amp;#46;&amp;#x30;&lt;/a&gt; –save&lt;/p&gt;
+&lt;p&gt;npm install &lt;a href=&#34;mailto:&amp;#99;&amp;#104;&amp;#x65;&amp;#x65;&amp;#114;&amp;#105;&amp;#111;&amp;#x40;&amp;#x30;&amp;#x2e;&amp;#x32;&amp;#x32;&amp;#46;&amp;#48;&#34;&gt;&amp;#99;&amp;#104;&amp;#x65;&amp;#x65;&amp;#114;&amp;#105;&amp;#111;&amp;#x40;&amp;#x30;&amp;#x2e;&amp;#x32;&amp;#x32;&amp;#46;&amp;#48;&lt;/a&gt; –save&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;搜索欄在底部&#34;&gt;&lt;a href=&#34;#搜索欄在底部&#34; class=&#34;headerlink&#34; title=&#34;搜索欄在底部&#34;&gt;&lt;/a&gt;搜索欄在底部&lt;/h3&gt;&lt;p&gt;hexo deploy後搜索欄在頁面底部&lt;/p&gt;
 &lt;blockquote&gt;
